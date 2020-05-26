@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    location    "0";
+    object      U.les;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (90 0 0);
+
+boundaryField
+{
+    frontAndBack
+    {
+        type            freestream;
+        freestreamValue uniform (90 0 0);
+        value           uniform (90 0 0);
+    }
+    inlet
+    {
+        type            freestream;
+        freestreamValue nonuniform 0();
+        value           nonuniform 0();
+    }
+    outlet
+    {
+        type            freestream;
+        freestreamValue nonuniform 0();
+        value           nonuniform 0();
+    }
+    solidWall
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+    procBoundary4to0
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to1
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to2
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to5
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to6
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to7
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+    procBoundary4to15
+    {
+        type            processor;
+        value           uniform (90 0 0);
+    }
+}
+
+
+// ************************************************************************* //

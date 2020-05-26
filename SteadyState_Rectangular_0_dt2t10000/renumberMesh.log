@@ -1,0 +1,73 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-1ff648926f77
+Exec   : renumberMesh -overwrite
+Date   : May 26 2020
+Time   : 18:51:47
+Host   : "fluid-ip2"
+PID    : 14845
+I/O    : uncollated
+Case   : /home/jaswinhargun/OpenFOAM/jaswinhargun-7/run/SteadyState_Rectangular_0_dt2t10000
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Mesh size: 545135
+Before renumbering :
+    band           : 544638
+    profile        : 3.4227265e+10
+
+Using default renumberMethod.
+
+Selecting renumberMethod CuthillMcKee
+
+Reading geometric fields
+
+Reading volScalarField R
+Reading volScalarField k.lowRe
+Reading volScalarField nuTilda.lowRe
+Reading volScalarField nuSgs
+Reading volScalarField mut
+Reading volScalarField k
+Reading volScalarField omega
+Reading volScalarField f
+Reading volScalarField epsilon.lowRe
+Reading volScalarField nuTilda
+Reading volScalarField k.les
+Reading volScalarField v2
+Reading volScalarField alphat
+Reading volScalarField kl
+Reading volScalarField magU
+Reading volScalarField mut.lowRe
+Reading volScalarField nut
+Reading volScalarField nuTilda.les
+Reading volScalarField kt
+Reading volScalarField p
+Reading volScalarField T
+Reading volScalarField epsilon
+Reading volScalarField nut.lowRe
+Reading volScalarField omega.lowRe
+Reading volVectorField U
+Reading volVectorField U.les
+
+After renumbering :
+    band           : 27558
+    profile        : 1.1147994e+10
+
+Writing mesh to "constant"
+
+Renumbering pointSets:
+    invertedBoundaryPoints
+End
+

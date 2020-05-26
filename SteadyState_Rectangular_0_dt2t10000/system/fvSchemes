@@ -20,49 +20,28 @@ FoamFile
 
 ddtSchemes
 {
-    default backward;
+    default         steadyState;
 }
-
-d2dt2Schemes
-{
-}
-
 
 gradSchemes
 {
     default         Gauss linear;
-    
-    grad(nuTilda)   cellLimited Gauss linear 1;
-    grad(U)         cellLimited Gauss linear 1;
-
 }
 
 divSchemes
 {
-//     div(phi,U)   			bounded Gauss upwind;
-//     div(phi,e)   			bounded  Gauss upwind;
-//     div(phi,Ekp)    			bounded  Gauss upwind;
-//     div(phi,k)      			bounded  Gauss upwind;
-//     div(phi,omega) 			bounded  Gauss upwind;
-//     div(phi,nuTilda)  			bounded  Gauss upwind;
-//     div(phi,epsilon)  			bounded  Gauss upwind;
-//     div(phi,R)  			bounded  Gauss upwind;
-//     div(phi,f)  			bounded  Gauss upwind;
-//     div(phi,v2)  			bounded  Gauss upwind;
-//     div(phi,kt)  			bounded  Gauss upwind;
-//     div(phi,kl)  			bounded  Gauss upwind;
-    div(phi,U)   			Gauss upwind;
-    div(phi,e)   			Gauss upwind;
-    div(phi,Ekp)    			Gauss upwind;
-    div(phi,k)      			Gauss upwind;
-    div(phi,omega) 			Gauss upwind;
-    div(phi,nuTilda)  			Gauss upwind;
-    div(phi,epsilon)  			Gauss upwind;
-    div(phi,R)  			Gauss upwind;
-    div(phi,f)  			Gauss upwind;
-    div(phi,v2)  			Gauss upwind;
-    div(phi,kt)  			Gauss upwind;
-    div(phi,kl)  			Gauss upwind;
+    div(phi,U)   			bounded Gauss upwind;
+    div(phi,e)   			bounded  Gauss upwind;
+    div(phi,Ekp)    			bounded  Gauss upwind;
+    div(phi,k)      			bounded  Gauss upwind;
+    div(phi,omega) 			bounded  Gauss upwind;
+    div(phi,nuTilda)  			bounded  Gauss upwind;
+    div(phi,epsilon)  			bounded  Gauss upwind;
+    div(phi,R)  			bounded  Gauss upwind;
+    div(phi,f)  			bounded  Gauss upwind;
+    div(phi,v2)  			bounded  Gauss upwind;
+    div(phi,kt)  			bounded  Gauss upwind;
+    div(phi,kl)  			bounded  Gauss upwind;
     div(R) 					Gauss linear;
     div(nonlinearStress) 			Gauss linear;
     div((nuEff*dev2(T(grad(U))))) 		Gauss linear;
@@ -77,9 +56,8 @@ divSchemes
 
 laplacianSchemes
 {
-    default         Gauss linear limited corrected 0.33;
-//     default         			Gauss linear corrected;
-/*    
+    default         			Gauss linear corrected;
+    
     laplacian(nuEff,U) 			Gauss linear corrected;
     laplacian(DnuTildaEff,nuTilda) 	Gauss linear corrected;
     laplacian(1,p)  			Gauss linear corrected;
@@ -89,7 +67,7 @@ laplacianSchemes
     laplacian(DepsilonEff,epsilon) 	Gauss linear corrected;
     laplacian(DkEff,k) 			Gauss linear corrected;
     laplacian(DREff,R) 			Gauss linear corrected;
-*/
+
 }
 
 interpolationSchemes
@@ -99,14 +77,13 @@ interpolationSchemes
 
 snGradSchemes
 {
-    default         limited corrected 0.33;
-//     default         corrected;
+    default         corrected;
 }
 
 fluxRequired
 {
     default         no;
-    p;
+    p               ;
 }
 wallDist
 {
