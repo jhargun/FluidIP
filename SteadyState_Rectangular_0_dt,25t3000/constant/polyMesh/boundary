@@ -15,38 +15,33 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-
 4
 (
-frontAndBack
-{
-    type patch;
-    nFaces 13136;
-    startFace 1636114;
-}
-
-inlet
-{
-    type patch;
-    nFaces 1753;
-    startFace 1649250;
-}
-
-outlet
-{
-    type patch;
-    nFaces 1808;
-    startFace 1651003;
-}
-
-solidWall
-{
-    type wall;
-    nFaces 97194;
-    startFace 1652811;
-}
-
+    frontAndBack
+    {
+        type            patch;
+        nFaces          13136;
+        startFace       1636114;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          1753;
+        startFace       1649250;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          1808;
+        startFace       1651003;
+    }
+    solidWall
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          97194;
+        startFace       1652811;
+    }
 )
-
 
 // ************************************************************************* //

@@ -14,11 +14,11 @@ FoamFile
     format      ascii;
     class       dictionary;
     location    "system";
-    object      controlDict.pimpleFoam;
+    object      controlDict.simpleFoam;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     pisoFoam;
+application     simpleFoam;
 
 startFrom       latestTime; //latestTime;
 
@@ -26,13 +26,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime 1;
+endTime 3000;
 
-deltaT 0.0001;
+deltaT .25;
 
 writeControl    runTime;
 
-writeInterval   0.1;
+writeInterval   1000;
 
 purgeWrite      0;
 
@@ -47,10 +47,6 @@ timeFormat      general;
 timePrecision   6;
 
 runTimeModifiable false;
-
-adjustTimeStep  yes;
-
-maxCo           0.9;
 
 
 functions
